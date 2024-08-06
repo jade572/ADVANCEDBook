@@ -13,11 +13,11 @@ class MainTabBarcontroller: UITabBarController {
         super.viewDidLoad()
 
         let firstVC = MainViewcontroller()
-        firstVC.tabBarItem = UITabBarItem(title: "첫번쨰", image: .init(systemName: "magnifyingglass"), tag: 0)
+        firstVC.tabBarItem = UITabBarItem(title: "검색" , image: .init(systemName: "magnifyingglass"), tag: 0)
 
 
         let secondVC = addBookViewController()
-        secondVC.tabBarItem = UITabBarItem(title: "두번쨰", image: .init(systemName: "book"), tag: 0)
+        secondVC.tabBarItem = UITabBarItem(title: "담은 책", image: .init(systemName: "book"), tag: 0)
 
         viewControllers = [firstVC,secondVC]
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA48A6472C61A73E007019C0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6462C61A73E007019C0 /* SnapKit */; };
 		DA48A6492C61A73E007019C0 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6482C61A73E007019C0 /* SnapKit-Dynamic */; };
+		DA48A64B2C61EB9A007019C0 /* troller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A64A2C61EB9A007019C0 /* troller.swift */; };
 		DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */; };
 		DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */; };
 		DAB217A62C5CCB7100FE8627 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA48A64A2C61EB9A007019C0 /* troller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = troller.swift; sourceTree = "<group>"; };
 		DAB2179E2C5CCB7100FE8627 /* ADVANCEDBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADVANCEDBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				DAB217AF2C5CCB7400FE8627 /* LaunchScreen.storyboard */,
 				DAB217B22C5CCB7400FE8627 /* Info.plist */,
 				DAB217AA2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld */,
+				DA48A64A2C61EB9A007019C0 /* troller.swift */,
 			);
 			path = ADVANCEDBook;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */,
 				DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */,
 				DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */,
+				DA48A64B2C61EB9A007019C0 /* troller.swift in Sources */,
 				DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
