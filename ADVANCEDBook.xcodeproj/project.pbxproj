@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA48A6472C61A73E007019C0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6462C61A73E007019C0 /* SnapKit */; };
+		DA48A6492C61A73E007019C0 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6482C61A73E007019C0 /* SnapKit-Dynamic */; };
 		DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */; };
 		DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */; };
-		DAB217A62C5CCB7100FE8627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A52C5CCB7100FE8627 /* ViewController.swift */; };
+		DAB217A62C5CCB7100FE8627 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */; };
 		DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB217AA2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld */; };
 		DAB217AE2C5CCB7400FE8627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */; };
 		DAB217B12C5CCB7400FE8627 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DAB217B02C5CCB7400FE8627 /* Base */; };
-		DAB217B92C5CE42F00FE8627 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217B82C5CE42F00FE8627 /* ViewController2.swift */; };
+		DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */; };
 		DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +23,12 @@
 		DAB2179E2C5CCB7100FE8627 /* ADVANCEDBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADVANCEDBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAB217A52C5CCB7100FE8627 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
 		DAB217AB2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ADVANCEDBook.xcdatamodel; sourceTree = "<group>"; };
 		DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB217B02C5CCB7400FE8627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB217B22C5CCB7400FE8627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB217B82C5CE42F00FE8627 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookViewController.swift; sourceTree = "<group>"; };
 		DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarcontroller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA48A6472C61A73E007019C0 /* SnapKit in Frameworks */,
+				DA48A6492C61A73E007019C0 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +66,8 @@
 			children = (
 				DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */,
 				DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */,
-				DAB217A52C5CCB7100FE8627 /* ViewController.swift */,
-				DAB217B82C5CE42F00FE8627 /* ViewController2.swift */,
+				DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */,
+				DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */,
 				DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */,
 				DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */,
 				DAB217AF2C5CCB7400FE8627 /* LaunchScreen.storyboard */,
@@ -89,6 +93,10 @@
 			dependencies = (
 			);
 			name = ADVANCEDBook;
+			packageProductDependencies = (
+				DA48A6462C61A73E007019C0 /* SnapKit */,
+				DA48A6482C61A73E007019C0 /* SnapKit-Dynamic */,
+			);
 			productName = ADVANCEDBook;
 			productReference = DAB2179E2C5CCB7100FE8627 /* ADVANCEDBook.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +125,9 @@
 				Base,
 			);
 			mainGroup = DAB217952C5CCB7100FE8627;
+			packageReferences = (
+				DA48A6452C61A73E007019C0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DAB2179F2C5CCB7100FE8627 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,12 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB217A62C5CCB7100FE8627 /* ViewController.swift in Sources */,
+				DAB217A62C5CCB7100FE8627 /* MainViewcontroller.swift in Sources */,
 				DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */,
 				DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */,
 				DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */,
 				DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */,
-				DAB217B92C5CE42F00FE8627 /* ViewController2.swift in Sources */,
+				DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +372,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA48A6452C61A73E007019C0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA48A6462C61A73E007019C0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA48A6452C61A73E007019C0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		DA48A6482C61A73E007019C0 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA48A6452C61A73E007019C0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DAB217AA2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld */ = {
