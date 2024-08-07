@@ -12,7 +12,7 @@ class MainTabBarcontroller: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let firstVC = MainViewcontroller()
+        let firstVC = MainViewController()
         firstVC.tabBarItem = UITabBarItem(title: "검색" , image: .init(systemName: "magnifyingglass"), tag: 0)
 
 
