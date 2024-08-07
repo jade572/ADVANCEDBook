@@ -106,7 +106,7 @@ class MainViewController: UIViewController {
     }
 
     @objc private func presentSheet() {
-        let sheetVC = SheetViewController()
+        let sheetVC = modalViewController()
 
         if let sheet = sheetVC.sheetPresentationController {
             sheet.detents = [.large()]
@@ -115,12 +115,5 @@ class MainViewController: UIViewController {
         }
 
         present(sheetVC, animated: true, completion: nil)
-    }
-}
-
-class SheetViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
     }
 }

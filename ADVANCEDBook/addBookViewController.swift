@@ -71,11 +71,11 @@ class addBookViewController: UIViewController {
 
         }
         allDeleteButton.snp.makeConstraints {
-            $0.trailing.equalTo(searchResultsLabel.snp.leading).inset(50)
+            $0.trailing.equalTo(searchResultsLabel.snp.trailing).inset(50)
             $0.centerY.equalTo(searchResultsLabel)
         }
         addButton.snp.makeConstraints {
-            $0.leading.equalTo(searchResultsLabel.snp.trailing).offset(50)
+            $0.leading.equalTo(searchResultsLabel.snp.leading).offset(50)
             $0.centerY.equalTo(searchResultsLabel)
         }
 
