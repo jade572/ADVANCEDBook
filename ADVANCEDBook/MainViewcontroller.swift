@@ -116,4 +116,12 @@ class MainViewController: UIViewController {
 
         present(sheetVC, animated: true, completion: nil)
     }
+    @objc private func saveButtonTapped() {
+            addBookViewController.saveBook(title: "Sample Title", author: "Sample Author")
+        }
+
+        @objc private func fetchButtonTapped() {
+            let books = addBookViewController.fetchBooks()
+            // UI에 books 데이터를 반영하는 로직 추가
+        }
 }
