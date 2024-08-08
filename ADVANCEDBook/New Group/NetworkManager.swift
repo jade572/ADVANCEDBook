@@ -11,8 +11,7 @@ class NetworkManager {
     static let shared = NetworkManager()
 
     private let baseURL = "https://dapi.kakao.com/v3/search/book?query="
-    private let apiKey = "KakaoAK 473d8a839fbefd4a944818e7fee6034a"  // 올바른 API 키 사용
-
+    private let apiKey = "KakaoAK 473d8a839fbefd4a944818e7fee6034a" 
     func fetchBooks(query: String, completion: @escaping (Result<[BookModel], Error>) -> Void) {
         guard let url = URL(string: baseURL + query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
@@ -50,8 +49,7 @@ struct BookSearchResult: Decodable {
 struct BookModel: Decodable {
     let title: String
     let authors: [String]
+    let contents: String?
     let price: Int
     let thumbnail: String?
-    let description: String?
 }
-

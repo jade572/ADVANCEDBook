@@ -9,79 +9,80 @@ import UIKit
 import SnapKit
 
 class BookCollectionCell: UICollectionViewCell {
+    private let thumbnailImageView = UIImageView()
     private let titleLabel = UILabel()
     private let authorLabel = UILabel()
     private let priceLabel = UILabel()
-    private let thumbnailImageView = UIImageView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViews() {
-        // Set the content mode and size constraints for the thumbnail image
         thumbnailImageView.contentMode = .scaleAspectFit
-        thumbnailImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(50) // Set the size of the image
-        }
-        
-        // Set font properties for the labels
+
         titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
-        titleLabel.numberOfLines = 1 // Restrict text to a single line
-        titleLabel.lineBreakMode = .byTruncatingTail // Truncate long text
-        
+        titleLabel.numberOfLines = 1
+        titleLabel.lineBreakMode = .byTruncatingTail
+
         authorLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        authorLabel.numberOfLines = 1 // Restrict text to a single line
-        authorLabel.lineBreakMode = .byTruncatingTail // Truncate long text
-        
+        authorLabel.numberOfLines = 1
+        authorLabel.lineBreakMode = .byTruncatingTail
+
         priceLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        priceLabel.textAlignment = .right
-        
-        // Arrange title, author, and price labels in a horizontal stack
-        let infoStackView = UIStackView(arrangedSubviews: [titleLabel, authorLabel, priceLabel])
-        infoStackView.axis = .horizontal
-        infoStackView.spacing = 4
-        infoStackView.alignment = .leading
-        
-        // Arrange the thumbnail and info stack view in a vertical stack
-        let containerStackView = UIStackView(arrangedSubviews: [thumbnailImageView, infoStackView])
-        containerStackView.axis = .vertical
-        containerStackView.spacing = 8
-        containerStackView.alignment = .leading
-        
-        // Add the container stack view to the content view
-        contentView.addSubview(containerStackView)
-        containerStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
+        priceLabel.textAlignment = .left
+
+        contentView.addSubview(thumbnailImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(authorLabel)
+        contentView.addSubview(priceLabel)
+
+        thumbnailImageView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(60) // 이미지 크기를 더 크게 설정
         }
-        
-        // Set border and corner properties for the cell
-        contentView.layer.borderColor = UIColor.black.cgColor
-        contentView.layer.borderWidth = 1
-        contentView.layer.cornerRadius = 8
-        contentView.clipsToBounds = true
+
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8)
+            make.left.equalTo(thumbnailImageView.snp.right).offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+
+        authorLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.left.equalTo(thumbnailImageView.snp.right).offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+
+        priceLabel.snp.makeConstraints { make in
+            make.top.equalTo(authorLabel.snp.bottom).offset(4)
+            make.left.equalTo(thumbnailImageView.snp.right).offset(16)
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-8)
+        }
     }
-    
+
     func configure(with book: BookModel) {
-        // Configure the cell with the book data
         titleLabel.text = book.title
         authorLabel.text = book.authors.joined(separator: ", ")
         priceLabel.text = "\(book.price)원"
-        
-        
+
         if let thumbnail = book.thumbnail, let url = URL(string: thumbnail) {
-            DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async {
                         self.thumbnailImageView.image = UIImage(data: data)
                     }
                 }
             }
+        } else {
+            thumbnailImageView.image = nil
         }
     }
 }

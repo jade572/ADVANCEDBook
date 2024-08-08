@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA48A6472C61A73E007019C0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6462C61A73E007019C0 /* SnapKit */; };
 		DA48A6492C61A73E007019C0 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DA48A6482C61A73E007019C0 /* SnapKit-Dynamic */; };
-		DA48A6742C641266007019C0 /* modal ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6732C641266007019C0 /* modal ViewController.swift */; };
+		DA48A6742C641266007019C0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6732C641266007019C0 /* ModalViewController.swift */; };
 		DA48A6772C641BD1007019C0 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6752C641BD1007019C0 /* Book+CoreDataClass.swift */; };
 		DA48A6782C641BD1007019C0 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6762C641BD1007019C0 /* Book+CoreDataProperties.swift */; };
 		DA48A6812C65876E007019C0 /* BookCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6802C65876E007019C0 /* BookCollectionCell.swift */; };
@@ -21,12 +21,12 @@
 		DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB217AA2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld */; };
 		DAB217AE2C5CCB7400FE8627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */; };
 		DAB217B12C5CCB7400FE8627 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DAB217B02C5CCB7400FE8627 /* Base */; };
-		DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */; };
+		DAB217B92C5CE42F00FE8627 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217B82C5CE42F00FE8627 /* AddBookViewController.swift */; };
 		DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA48A6732C641266007019C0 /* modal ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "modal ViewController.swift"; sourceTree = "<group>"; };
+		DA48A6732C641266007019C0 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		DA48A6752C641BD1007019C0 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA48A6762C641BD1007019C0 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA48A6802C65876E007019C0 /* BookCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionCell.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB217B02C5CCB7400FE8627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB217B22C5CCB7400FE8627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBookViewController.swift; sourceTree = "<group>"; };
+		DAB217B82C5CE42F00FE8627 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarcontroller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +91,9 @@
 				DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */,
 				DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */,
 				DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */,
-				DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */,
+				DAB217B82C5CE42F00FE8627 /* AddBookViewController.swift */,
 				DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */,
-				DA48A6732C641266007019C0 /* modal ViewController.swift */,
+				DA48A6732C641266007019C0 /* ModalViewController.swift */,
 				DA48A67F2C658758007019C0 /* New Group */,
 				DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */,
 				DAB217AF2C5CCB7400FE8627 /* LaunchScreen.storyboard */,
@@ -188,10 +188,10 @@
 				DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */,
 				DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */,
 				DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */,
-				DA48A6742C641266007019C0 /* modal ViewController.swift in Sources */,
+				DA48A6742C641266007019C0 /* ModalViewController.swift in Sources */,
 				DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */,
 				DA48A6832C65877D007019C0 /* BookTableCell.swift in Sources */,
-				DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */,
+				DAB217B92C5CE42F00FE8627 /* AddBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

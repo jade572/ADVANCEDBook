@@ -129,10 +129,20 @@ extension AddBookViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: BookModel(
             title: book.title ?? "",
             authors: [book.author ?? ""],
+            contents: book.description,  // description 필드를 먼저 사용
             price: Int(book.price ?? "0") ?? 0,
-            thumbnail: nil,
-            description: nil)
-        )
+            thumbnail: nil
+        ))
         return cell
     }
 }
+
+
+
+
+
+
+
+
+
+

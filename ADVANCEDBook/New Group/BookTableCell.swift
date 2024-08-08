@@ -44,4 +44,5 @@ class BookTableCell: UITableViewCell {
         authorLabel.text = book.authors.joined(separator: ", ")
         priceLabel.text = "\(book.price)원"
     }
+    
 }
