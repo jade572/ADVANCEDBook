@@ -4,14 +4,13 @@
 //
 //  Created by 이진규 on 8/2/24.
 //
-
 import UIKit
-import SnapKit
 import CoreData
+import SnapKit
 
-class addBookViewController: UIViewController {
+class AddBookViewController: UIViewController {
 
-    let searchResultsLabel : UILabel = {
+    let searchResultsLabel: UILabel = {
         let searchResults = UILabel()
         searchResults.text = "담은 책"
         searchResults.textColor = .black
@@ -19,53 +18,38 @@ class addBookViewController: UIViewController {
         return searchResults
     }()
 
-    let allDeleteButton : UIButton = {
-        let allDelete = UIButton()
-        allDelete.setTitle("전체삭제", for: .normal)
-        allDelete.setTitleColor(.blue, for: .normal)
-        return allDelete
+    let allDeleteButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("전체삭제", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
     }()
 
-    let addButton : UIButton = {
-        let add = UIButton()
-        add.setTitle("추가", for: .normal)
-        add.setTitleColor(.blue, for: .normal)
-        return add
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(BookTableCell.self, forCellReuseIdentifier: "BookTableCell")
+        return tableView
     }()
 
-    let resultView : UIView = {
-        let result = UIView()
-        result.layer.borderColor = UIColor.black.cgColor
-        result.layer.borderWidth = 1
-        return result
-    }()
-
-    let resultView2 : UIView = {
-        let result2 = UIView()
-        result2.layer.borderColor = UIColor.black.cgColor
-        result2.layer.borderWidth = 1
-        return result2
-    }()
-
-    let resultView3 : UIView = {
-        let result3 = UIView()
-        result3.layer.borderColor = UIColor.black.cgColor
-        result3.layer.borderWidth = 1
-        return result3
-    }()
+    var books: [Book] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        fetchBooks()
+        tableView.dataSource = self
+        tableView.delegate = self
         allDeleteButton.addTarget(self, action: #selector(deleteAllBooks), for: .touchUpInside)
-        addButton.addTarget(self, action: #selector(addSampleBook), for: .touchUpInside)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(bookAdded), name: NSNotification.Name("bookAdded"), object: nil)
     }
 
     private func setupViews() {
         view.backgroundColor = .white
 
-        [searchResultsLabel, resultView, resultView2, resultView3, allDeleteButton, addButton]
-            .forEach { view.addSubview($0) }
+        view.addSubview(searchResultsLabel)
+        view.addSubview(allDeleteButton)
+        view.addSubview(tableView)
 
         searchResultsLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -76,40 +60,48 @@ class addBookViewController: UIViewController {
             $0.leading.equalTo(searchResultsLabel.snp.trailing).offset(60)
             $0.centerY.equalTo(searchResultsLabel)
         }
-
-        addButton.snp.makeConstraints {
-            $0.trailing.equalTo(searchResultsLabel.snp.leading).offset(-60)
-            $0.centerY.equalTo(searchResultsLabel)
-        }
-
-
-        resultView.snp.makeConstraints {
+        tableView.snp.makeConstraints {
             $0.top.equalTo(searchResultsLabel.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().inset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(60)
-        }
-        resultView2.snp.makeConstraints {
-            $0.top.equalTo(resultView.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().inset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(60)
-        }
-        resultView3.snp.makeConstraints {
-            $0.top.equalTo(resultView2.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().inset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(60)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 
-    // 데이터 저장 함수
-    @objc private func addSampleBook() {
-        addBookViewController.saveBook(title: "Sample Title", author: "Sample Author")
+    @objc private func bookAdded() {
+        fetchBooks()
     }
 
-    // 데이터 삭제 함수
-    @objc private func deleteAllBooks() {
+    func fetchBooks() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Book> = Book.fetchRequest()
+
+        do {
+            books = try context.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+
+    static func saveBook(title: String, author: String, price: Int, completion: @escaping () -> Void) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Book", in: context)!
+        let book = NSManagedObject(entity: entity, insertInto: context) as! Book
+
+        book.title = title
+        book.author = author
+        book.price = String(price)
+
+        do {
+            try context.save()
+            completion()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
+    @objc func deleteAllBooks() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Book.fetchRequest()
@@ -118,37 +110,29 @@ class addBookViewController: UIViewController {
         do {
             try context.execute(deleteRequest)
             try context.save()
+            books.removeAll()
+            tableView.reloadData()
         } catch let error as NSError {
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
+}
 
-    static func saveBook(title: String, author: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let context = appDelegate.persistentContainer.viewContext
-        let book = Book(context: context)
-
-        book.title = title
-        book.author = author
-
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+extension AddBookViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return books.count
     }
 
-    static func fetchBooks() -> [Book] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Book> = Book.fetchRequest()
-
-        do {
-            let books = try context.fetch(fetchRequest)
-            return books
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return []
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableCell", for: indexPath) as! BookTableCell
+        let book = books[indexPath.row]
+        cell.configure(with: BookModel(
+            title: book.title ?? "",
+            authors: [book.author ?? ""],
+            price: Int(book.price ?? "0") ?? 0,
+            thumbnail: nil,
+            description: nil)
+        )
+        return cell
     }
 }

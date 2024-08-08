@@ -4,7 +4,6 @@
 //
 //  Created by 이진규 on 8/4/24.
 //
-
 import UIKit
 
 class MainTabBarcontroller: UITabBarController {
@@ -16,7 +15,7 @@ class MainTabBarcontroller: UITabBarController {
         firstVC.tabBarItem = UITabBarItem(title: "검색" , image: .init(systemName: "magnifyingglass"), tag: 0)
 
 
-        let secondVC = addBookViewController()
+        let secondVC = AddBookViewController()
         secondVC.tabBarItem = UITabBarItem(title: "담은 책", image: .init(systemName: "book"), tag: 0)
 
         viewControllers = [firstVC,secondVC]

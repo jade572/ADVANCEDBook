@@ -12,6 +12,9 @@
 		DA48A6742C641266007019C0 /* modal ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6732C641266007019C0 /* modal ViewController.swift */; };
 		DA48A6772C641BD1007019C0 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6752C641BD1007019C0 /* Book+CoreDataClass.swift */; };
 		DA48A6782C641BD1007019C0 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6762C641BD1007019C0 /* Book+CoreDataProperties.swift */; };
+		DA48A6812C65876E007019C0 /* BookCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6802C65876E007019C0 /* BookCollectionCell.swift */; };
+		DA48A6832C65877D007019C0 /* BookTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6822C65877D007019C0 /* BookTableCell.swift */; };
+		DA48A6852C6587D2007019C0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48A6842C6587D2007019C0 /* NetworkManager.swift */; };
 		DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */; };
 		DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */; };
 		DAB217A62C5CCB7100FE8627 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB217A52C5CCB7100FE8627 /* MainViewcontroller.swift */; };
@@ -26,6 +29,9 @@
 		DA48A6732C641266007019C0 /* modal ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "modal ViewController.swift"; sourceTree = "<group>"; };
 		DA48A6752C641BD1007019C0 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA48A6762C641BD1007019C0 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA48A6802C65876E007019C0 /* BookCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionCell.swift; sourceTree = "<group>"; };
+		DA48A6822C65877D007019C0 /* BookTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableCell.swift; sourceTree = "<group>"; };
+		DA48A6842C6587D2007019C0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DAB2179E2C5CCB7100FE8627 /* ADVANCEDBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADVANCEDBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB217A12C5CCB7100FE8627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB217A32C5CCB7100FE8627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA48A67F2C658758007019C0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				DA48A6802C65876E007019C0 /* BookCollectionCell.swift */,
+				DA48A6822C65877D007019C0 /* BookTableCell.swift */,
+				DA48A6842C6587D2007019C0 /* NetworkManager.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		DAB217952C5CCB7100FE8627 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 				DAB217B82C5CE42F00FE8627 /* addBookViewController.swift */,
 				DAB217BE2C5EA52A00FE8627 /* MainTabBarcontroller.swift */,
 				DA48A6732C641266007019C0 /* modal ViewController.swift */,
+				DA48A67F2C658758007019C0 /* New Group */,
 				DAB217AD2C5CCB7400FE8627 /* Assets.xcassets */,
 				DAB217AF2C5CCB7400FE8627 /* LaunchScreen.storyboard */,
 				DAB217B22C5CCB7400FE8627 /* Info.plist */,
@@ -163,14 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA48A6852C6587D2007019C0 /* NetworkManager.swift in Sources */,
 				DA48A6772C641BD1007019C0 /* Book+CoreDataClass.swift in Sources */,
 				DA48A6782C641BD1007019C0 /* Book+CoreDataProperties.swift in Sources */,
+				DA48A6812C65876E007019C0 /* BookCollectionCell.swift in Sources */,
 				DAB217A62C5CCB7100FE8627 /* MainViewcontroller.swift in Sources */,
 				DAB217A22C5CCB7100FE8627 /* AppDelegate.swift in Sources */,
 				DAB217BF2C5EA52A00FE8627 /* MainTabBarcontroller.swift in Sources */,
 				DAB217AC2C5CCB7100FE8627 /* ADVANCEDBook.xcdatamodeld in Sources */,
 				DA48A6742C641266007019C0 /* modal ViewController.swift in Sources */,
 				DAB217A42C5CCB7100FE8627 /* SceneDelegate.swift in Sources */,
+				DA48A6832C65877D007019C0 /* BookTableCell.swift in Sources */,
 				DAB217B92C5CE42F00FE8627 /* addBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

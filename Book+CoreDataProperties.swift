@@ -18,6 +18,7 @@ extension Book {
 
     @NSManaged public var author: String?
     @NSManaged public var title: String?
+    @NSManaged public var price: String?
 
 }
 
