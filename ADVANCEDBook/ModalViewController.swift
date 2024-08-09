@@ -98,19 +98,20 @@ class ModalViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(16)
         }
 
-        addButton.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-
         cancelButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
-            make.width.height.equalTo(50)
-        }
-    }
+               make.leading.equalToSuperview().offset(16)
+               make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+               make.width.equalTo(60)  // X 버튼 너비
+               make.height.equalTo(44)  // 버튼 높이
+           }
 
+           addButton.snp.makeConstraints { make in
+               make.leading.equalTo(cancelButton.snp.trailing).offset(16)
+               make.trailing.equalToSuperview().offset(-16)
+               make.centerY.equalTo(cancelButton)
+               make.height.equalTo(cancelButton)  
+           }
+       }
     private func configureView() {
         guard let book = book else { return }
         titleLabel.text = book.title
